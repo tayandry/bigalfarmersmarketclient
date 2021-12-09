@@ -369,13 +369,29 @@ function getEvents(){
       })
   }
 
+  function getBusinesses(){
+    const businessurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/business";
+  
+    fetch(businessurl).then(function(response){
+        console.log(response);
+        return response.json();
+    }).then(function(json){
+            let html = "<ul>";
+            json.forEach((business)=>{
+                html += "<li>" + "Name:     " + business.businessName + "</li>";
+            }); 
+            html += "</ul>";
+            document.getElementById("businesslist").innerHTML = html;
+        })
+    }
+
   function businessRSVP(){
-    const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/businessRegistration"
+    const apibusinessrsvpurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/businessRegistration"
     const email = document.getElementById("email").value;
     const eventid = document.getElementById("eventid").value;
     const creditcard = document.getElementById("creditcard").value;
   
-    fetch(apiurl, {
+    fetch(apibusinessrsvpurl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
@@ -393,11 +409,11 @@ function getEvents(){
   }
 
   function customerRSVP(){
-    const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customerRegistration"
+    const apicustomerrsvpurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customerRegistration"
     const email = document.getElementById("email").value;
     const eventid = document.getElementById("eventid").value;
 
-    fetch(apiurl, {
+    fetch(apicustomerrsvpurl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
