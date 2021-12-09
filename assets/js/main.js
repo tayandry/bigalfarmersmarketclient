@@ -251,7 +251,7 @@
 })()
 
 function addBusiness(){
-  const apiurl = "https://localhost:5001/api/account/business"
+  const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/business"
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const fullname = document.getElementById("fullname").value;
@@ -284,7 +284,7 @@ function addBusiness(){
 }
 
 function addCustomer(){
-  const apiurl = "https://localhost:5001/api/account/customer"
+  const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customer"
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const fullname = document.getElementById("fullname").value;
@@ -309,7 +309,7 @@ function addCustomer(){
 
 function businessLogin(){
   const email = document.getElementById("username").value;
-  const businessurl = "https://localhost:5001/api/account/business/" + email;
+  const businessurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/business/" + email;
   // const password = document.getElementById("password").value;
 
     fetch(businessurl).then(function(response){
@@ -336,7 +336,7 @@ function businessLogin(){
 
 function selectCustomer(){
   const email = document.getElementById("email").value;
-  const customerurl = "https://localhost:5001/api/account/customer/" + email;
+  const customerurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customer/" + email;
   // const password = document.getElementById("password").value;
 
   fetch(customerurl).then(function(response){
@@ -354,7 +354,7 @@ function selectCustomer(){
 }
 
 function getEvents(){
-  const eventsurl = "https://localhost:5001/api/account/event";
+  const eventsurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/event";
 
   fetch(eventsurl).then(function(response){
       console.log(response);
@@ -370,7 +370,7 @@ function getEvents(){
   }
 
   function businessRSVP(){
-    const apiurl = "https://localhost:5001/api/account/businessRegistration"
+    const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/businessRegistration"
     const email = document.getElementById("email").value;
     const eventid = document.getElementById("eventid").value;
     const creditcard = document.getElementById("creditcard").value;
@@ -393,7 +393,7 @@ function getEvents(){
   }
 
   function customerRSVP(){
-    const apiurl = "https://localhost:5001/api/account/customerRegistration"
+    const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customerRegistration"
     const email = document.getElementById("email").value;
     const eventid = document.getElementById("eventid").value;
     fetch(apiurl, {
