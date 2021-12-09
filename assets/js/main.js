@@ -396,6 +396,7 @@ function getEvents(){
     const apiurl = "https://bigalsfarmersmarketapi.herokuapp.com/api/account/customerRegistration"
     const email = document.getElementById("email").value;
     const eventid = document.getElementById("eventid").value;
+    
     fetch(apiurl, {
         method: "POST",
         headers: {
